@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220823 16:35:36.512" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="C:\Users\tanak\OneDrive\Desktop\Automation Testing\PetPaw(Structure)\TestSuites\Login.robot">
+<test id="s1-t1" name="S_TC-001 not verify email Login-Tap broadcast" line="18">
+<kw name="Open Application Samsung" library="StartApp_kw">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://localhost:4723/wd/hub</arg>
+<arg>deviceName=5c02860</arg>
+<arg>platformVersion=10.0</arg>
+<arg>platformName=Android</arg>
+<arg>appPackage=com.petpaw.mobile.alpha</arg>
+<arg>appActivity=com.petpaw.mobile.MainActivity</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220823 16:35:40.572" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220823 16:35:40.569" endtime="20220823 16:35:40.579"/>
+</kw>
+<msg timestamp="20220823 16:35:40.585" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220823 16:35:40.587" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\tanak\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 5c02860 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1'' exited with code 1'; Command output: error: protocol fault (couldn't read status): connection reset
+
+</msg>
+<status status="FAIL" starttime="20220823 16:35:37.053" endtime="20220823 16:35:40.588"/>
+</kw>
+<status status="FAIL" starttime="20220823 16:35:37.052" endtime="20220823 16:35:40.590"/>
+</kw>
+<kw name="Check popup and accept 1 only use now" library="StartApp_kw">
+<arg>${verify_popup_camera}</arg>
+<arg>${verify_popup_image}</arg>
+<status status="NOT RUN" starttime="20220823 16:35:40.591" endtime="20220823 16:35:40.591"/>
+</kw>
+<kw name="Tap Element Show login" library="Login_kw">
+<arg>${broadcast_btn}</arg>
+<status status="NOT RUN" starttime="20220823 16:35:40.591" endtime="20220823 16:35:40.592"/>
+</kw>
+<kw name="login" library="Login_kw">
+<arg>${username_valid}</arg>
+<arg>${passwd_valid}</arg>
+<status status="NOT RUN" starttime="20220823 16:35:40.592" endtime="20220823 16:35:40.592"/>
+</kw>
+<kw name="verify login with not verify email" library="Login_kw">
+<status status="NOT RUN" starttime="20220823 16:35:40.593" endtime="20220823 16:35:40.593"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="NOT RUN" starttime="20220823 16:35:40.594" endtime="20220823 16:35:40.594"/>
+</kw>
+<status status="FAIL" starttime="20220823 16:35:37.049" endtime="20220823 16:35:40.595">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\tanak\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 5c02860 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1'' exited with code 1'; Command output: error: protocol fault (couldn't read status): connection reset
+
+</status>
+</test>
+<test id="s1-t2" name="S_TC-002 invalid Login-Tap broadcast" line="26">
+<kw name="Open Application Samsung" library="StartApp_kw">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://localhost:4723/wd/hub</arg>
+<arg>deviceName=5c02860</arg>
+<arg>platformVersion=10.0</arg>
+<arg>platformName=Android</arg>
+<arg>appPackage=com.petpaw.mobile.alpha</arg>
+<arg>appActivity=com.petpaw.mobile.MainActivity</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220823 16:35:40.601" endtime="20220823 16:35:51.994"/>
+</kw>
+<status status="PASS" starttime="20220823 16:35:40.600" endtime="20220823 16:35:51.994"/>
+</kw>
+<kw name="Check popup and accept 1 only use now" library="StartApp_kw">
+<arg>${verify_popup_camera}</arg>
+<arg>${verify_popup_image}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${passed}</var>
+<arg>Wait Until Element is visible</arg>
+<arg>id=com.android.permissioncontroller:id/grant_dialog</arg>
+<arg>30s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/grant_dialog</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220823 16:35:52.331" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<status status="FAIL" starttime="20220823 16:35:52.319" endtime="20220823 16:35:52.336"/>
+</kw>
+<msg timestamp="20220823 16:35:52.339" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<msg timestamp="20220823 16:35:52.341" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: read ECONNRESET
+</msg>
+<status status="FAIL" starttime="20220823 16:35:51.997" endtime="20220823 16:35:52.343"/>
+</kw>
+<msg timestamp="20220823 16:35:52.343" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220823 16:35:51.996" endtime="20220823 16:35:52.343"/>
+</kw>
+<if>
+<branch type="IF" condition="${passed}">
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_message</arg>
+<arg>${verify_permission_camera}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220823 16:35:52.344" endtime="20220823 16:35:52.344"/>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_allow_one_time_button</arg>
+<doc>Tap element identified by ``locator``. </doc>
+<status status="NOT RUN" starttime="20220823 16:35:52.345" endtime="20220823 16:35:52.345"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_message</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="NOT RUN" starttime="20220823 16:35:52.345" endtime="20220823 16:35:52.345"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_message</arg>
+<arg>${verify_permission_image}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220823 16:35:52.346" endtime="20220823 16:35:52.346"/>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_allow_button</arg>
+<doc>Tap element identified by ``locator``. </doc>
+<status status="NOT RUN" starttime="20220823 16:35:52.346" endtime="20220823 16:35:52.347"/>
+</kw>
+<status status="NOT RUN" starttime="20220823 16:35:52.344" endtime="20220823 16:35:52.347"/>
+</branch>
+<status status="PASS" starttime="20220823 16:35:52.343" endtime="20220823 16:35:52.347"/>
+</if>
+<status status="PASS" starttime="20220823 16:35:51.995" endtime="20220823 16:35:52.347"/>
+</kw>
+<kw name="Tap Element Show login" library="Login_kw">
+<arg>${broadcast_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${check_guestmode}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220823 16:35:52.370" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<status status="FAIL" starttime="20220823 16:35:52.359" endtime="20220823 16:35:52.372"/>
+</kw>
+<msg timestamp="20220823 16:35:52.376" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<msg timestamp="20220823 16:35:52.379" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'POST /elements' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<status status="FAIL" starttime="20220823 16:35:52.349" endtime="20220823 16:35:52.380"/>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<arg>${check_guestmode}</arg>
+<doc>Tap element identified by ``locator``. </doc>
+<status status="NOT RUN" starttime="20220823 16:35:52.381" endtime="20220823 16:35:52.381"/>
+</kw>
+<status status="FAIL" starttime="20220823 16:35:52.348" endtime="20220823 16:35:52.381"/>
+</kw>
+<kw name="login" library="Login_kw">
+<arg>${username_invalid}</arg>
+<arg>${passwd_invalid}</arg>
+<status status="NOT RUN" starttime="20220823 16:35:52.382" endtime="20220823 16:35:52.382"/>
+</kw>
+<kw name="verify login fail" library="Login_kw">
+<status status="NOT RUN" starttime="20220823 16:35:52.383" endtime="20220823 16:35:52.383"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="NOT RUN" starttime="20220823 16:35:52.384" endtime="20220823 16:35:52.384"/>
+</kw>
+<status status="FAIL" starttime="20220823 16:35:40.599" endtime="20220823 16:35:52.385">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'POST /elements' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</status>
+</test>
+<test id="s1-t3" name="S_TC-003 valid Login-Tap broadcast" line="34">
+<kw name="Open Application Samsung" library="StartApp_kw">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://localhost:4723/wd/hub</arg>
+<arg>deviceName=5c02860</arg>
+<arg>platformVersion=10.0</arg>
+<arg>platformName=Android</arg>
+<arg>appPackage=com.petpaw.mobile.alpha</arg>
+<arg>appActivity=com.petpaw.mobile.MainActivity</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220823 16:35:52.389" endtime="20220823 16:36:04.300"/>
+</kw>
+<status status="PASS" starttime="20220823 16:35:52.388" endtime="20220823 16:36:04.300"/>
+</kw>
+<kw name="Check popup and accept 1 only use now" library="StartApp_kw">
+<arg>${verify_popup_camera}</arg>
+<arg>${verify_popup_image}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${passed}</var>
+<arg>Wait Until Element is visible</arg>
+<arg>id=com.android.permissioncontroller:id/grant_dialog</arg>
+<arg>30s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/grant_dialog</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220823 16:36:06.778" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<status status="FAIL" starttime="20220823 16:36:06.768" endtime="20220823 16:36:06.779"/>
+</kw>
+<msg timestamp="20220823 16:36:06.783" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<msg timestamp="20220823 16:36:06.786" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: read ECONNRESET
+</msg>
+<status status="FAIL" starttime="20220823 16:36:04.302" endtime="20220823 16:36:06.787"/>
+</kw>
+<msg timestamp="20220823 16:36:06.787" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220823 16:36:04.302" endtime="20220823 16:36:06.788"/>
+</kw>
+<if>
+<branch type="IF" condition="${passed}">
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_message</arg>
+<arg>${verify_permission_camera}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220823 16:36:06.788" endtime="20220823 16:36:06.788"/>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_allow_one_time_button</arg>
+<doc>Tap element identified by ``locator``. </doc>
+<status status="NOT RUN" starttime="20220823 16:36:06.788" endtime="20220823 16:36:06.788"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_message</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="NOT RUN" starttime="20220823 16:36:06.788" endtime="20220823 16:36:06.789"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_message</arg>
+<arg>${verify_permission_image}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220823 16:36:06.789" endtime="20220823 16:36:06.789"/>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<arg>id=com.android.permissioncontroller:id/permission_allow_button</arg>
+<doc>Tap element identified by ``locator``. </doc>
+<status status="NOT RUN" starttime="20220823 16:36:06.789" endtime="20220823 16:36:06.789"/>
+</kw>
+<status status="NOT RUN" starttime="20220823 16:36:06.788" endtime="20220823 16:36:06.789"/>
+</branch>
+<status status="PASS" starttime="20220823 16:36:06.788" endtime="20220823 16:36:06.789"/>
+</if>
+<status status="PASS" starttime="20220823 16:36:04.301" endtime="20220823 16:36:06.789"/>
+</kw>
+<kw name="Tap Element Show login" library="Login_kw">
+<arg>${broadcast_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${check_guestmode}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220823 16:36:06.809" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<status status="FAIL" starttime="20220823 16:36:06.801" endtime="20220823 16:36:06.814"/>
+</kw>
+<msg timestamp="20220823 16:36:06.817" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<msg timestamp="20220823 16:36:06.820" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'POST /elements' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<status status="FAIL" starttime="20220823 16:36:06.791" endtime="20220823 16:36:06.821"/>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<arg>${check_guestmode}</arg>
+<doc>Tap element identified by ``locator``. </doc>
+<status status="NOT RUN" starttime="20220823 16:36:06.821" endtime="20220823 16:36:06.822"/>
+</kw>
+<status status="FAIL" starttime="20220823 16:36:06.790" endtime="20220823 16:36:06.822"/>
+</kw>
+<kw name="login" library="Login_kw">
+<arg>${username_not_verify}</arg>
+<arg>${passwd_not_verify}</arg>
+<status status="NOT RUN" starttime="20220823 16:36:06.823" endtime="20220823 16:36:06.823"/>
+</kw>
+<kw name="verify login pass" library="Login_kw">
+<arg>${displayname_valid}</arg>
+<status status="NOT RUN" starttime="20220823 16:36:06.824" endtime="20220823 16:36:06.824"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="NOT RUN" starttime="20220823 16:36:06.825" endtime="20220823 16:36:06.825"/>
+</kw>
+<status status="FAIL" starttime="20220823 16:35:52.387" endtime="20220823 16:36:06.825">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'POST /elements' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</status>
+</test>
+<status status="FAIL" starttime="20220823 16:35:36.516" endtime="20220823 16:36:06.828"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220823 16:35:40.585" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220823 16:35:52.339" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<msg timestamp="20220823 16:35:52.376" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<msg timestamp="20220823 16:36:06.783" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+<msg timestamp="20220823 16:36:06.817" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+</msg>
+</errors>
+</robot>
