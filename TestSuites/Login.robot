@@ -15,54 +15,58 @@ Resource    ../Resources/imports.robot
 #     Check popup and accept 1 only use now not set timeout
 #     Close Application
 
-S_TC-001 not verify email Login-Tap broadcast 
-    Open Application Samsung
-    Check popup and accept 1 only use now    ${verify_popup_camera}        ${verify_popup_image}
-    Tap Element Show login                   ${broadcast_btn}
-    login                                    ${username_valid}             ${passwd_valid}
-    verify login with not verify email
-    Close Application
+# S_TC-001 empty Login-Tap broadcast
+#     Open Application Samsung
+#     Check popup and accept 1 only use now    ${verify_popup_camera}        ${verify_popup_image}   
+#     Tap Element Show login                   ${broadcast_btn}
+#     Wait Until Element Is Visible            xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]    30s
+#     Tap                                      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]              
+#     verify login fail                        ${verify_username_empty}      ${verify_passwd_empty}                         
+#     Close Application
 
-S_TC-002 invalid Login-Tap broadcast 
+# S_TC-002 invalid Login-Tap broadcast 
+#     Open Application Samsung
+#     Check popup and accept 1 only use now    ${verify_popup_camera}        ${verify_popup_image}   
+#     Tap Element Show login                   ${broadcast_btn}
+#     login                                    ${username_invalid}           ${passwd_invalid}
+#     verify login fail                        ${verify_username_fail}       ${verify_passwd_fail}  
+#     Close Application
+
+# S_TC-003 not verify email Login-Tap broadcast 
+#     Open Application Samsung
+#     Check popup and accept 1 only use now    ${verify_popup_camera}        ${verify_popup_image}
+#     Tap Element Show login                   ${broadcast_btn}
+#     login                                    ${username_not_verify}        ${passwd_not_verify}
+#     verify login with not verify email
+#     Close Application
+
+# S_TC-004 valid Login-Tap broadcast 
+#     Open Application Samsung
+#     Check popup and accept 1 only use now    ${verify_popup_camera}        ${verify_popup_image}
+#     Tap Element Show login                   ${broadcast_btn}
+#     login                                    ${username_valid}             ${passwd_valid}
+#     verify login pass                        ${displayname_valid}
+#     Close Application
+
+#------------------------------------------------------------
+
+S_TC-001 empty Login-Tap broadcast
     Open Application Samsung
     Check popup and accept 1 only use now    ${verify_popup_camera}        ${verify_popup_image}   
     Tap Element Show login                   ${broadcast_btn}
+    Wait Until Element Is Visible            xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]    30s
+    Tap                                      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]              
+    verify login fail                        ${verify_username_empty}      ${verify_passwd_empty}                         
+
+
+S_TC-002 invalid Login-Tap broadcast 
     login                                    ${username_invalid}           ${passwd_invalid}
-    verify login fail
-    Close Application
+    verify login fail                        ${verify_username_fail}       ${verify_passwd_fail}  
 
-S_TC-003 valid Login-Tap broadcast 
-    Open Application Samsung
-    Check popup and accept 1 only use now    ${verify_popup_camera}        ${verify_popup_image}
-    Tap Element Show login                   ${broadcast_btn}
+S_TC-003 not verify email Login-Tap broadcast 
     login                                    ${username_not_verify}        ${passwd_not_verify}
+    verify login with not verify email
+
+S_TC-004 valid Login-Tap broadcast 
+    login                                    ${username_valid}             ${passwd_valid}
     verify login pass                        ${displayname_valid}
-    Close Application
-
-# X_TC-001 Ex. Passed
-#     Open Application Xiaomi
-#     Check popup and accept 1 only use now
-#     Close Application
-
-# X_TC-002 Ex. Failed
-#     Open Application Xiaomi
-#     Check popup and accept 1 only use now not set timeout
-#     Close Application
-
-# x_TC-001 invalid Login-Tap broadcast 
-#     Open Application Xiaomi
-#     Check popup and accept 1 only use now
-#     Tap Element Show login
-#     login fail
-#     verify login fail
-#     Close Application
-
-# x_TC-002 valid Login-Tap broadcast 
-#     Open Application Xiaomi
-#     Check popup and accept 1 only use now
-#     Tap Element Show login
-#     login pass
-#     verify login pass
-#     Close Application
-
-    
