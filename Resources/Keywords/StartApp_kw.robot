@@ -14,12 +14,12 @@ Open Application by Devices
 
 Open Application by Simu
     Open Application    remote_url=http://localhost:4723/wd/hub     
-    ...     deviceName=CQZXGM5DHI8XXCAQ
-    ...     platformVersion=10.0 
+    ...     deviceName=Oreo
+    ...     platformVersion=8.0 
     ...     platformName=Android
     ...     appPackage=com.petpaw.mobile.alpha
     ...     appActivity=com.petpaw.mobile.MainActivity
-    # ...     noReset=true 
+    ...     noReset=true 
 
 #Check Permission
 Check popup and accept 1 only use now
