@@ -2,16 +2,17 @@
 Library   AppiumLibrary
 
 *** Keywords ***
-Open Application Samsung
+Open Application by Devices 
+    [Arguments]    ${device_name}    ${platform_version}    ${platform_name}
     Open Application    remote_url=http://localhost:4723/wd/hub     
-    ...     deviceName=R58N32LCN9K 
-    ...     platformVersion=12.0 
+    ...     deviceName=${device_name}
+    ...     platformVersion=${platform_version}
     ...     platformName=Android
     ...     appPackage=com.petpaw.mobile.alpha
     ...     appActivity=com.petpaw.mobile.MainActivity
     ...     noReset=true 
 
-Open Application Xiaomi
+Open Application by Simu
     Open Application    remote_url=http://localhost:4723/wd/hub     
     ...     deviceName=CQZXGM5DHI8XXCAQ
     ...     platformVersion=10.0 
