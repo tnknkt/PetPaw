@@ -3,8 +3,8 @@ Library   AppiumLibrary
 
 *** Variables *** 
 #Not verify
-${username_not_verify}   tanakornp@petpaw.com
-${passwd_not_verify}     Tt112233
+${wating_verify_email_title}        Your account waiting to verify
+${wating_verify_email_subtitle}     Please go to your email and verify your account.
 
 #verify_alert_message
 ${verify_username_fail}    Username is incorrect

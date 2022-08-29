@@ -3,8 +3,8 @@ Library   AppiumLibrary
 
 *** Variables *** 
 #Not verify
-${username_not_verify}   tanakornp@petpaw.com
-${passwd_not_verify}     Tt112233
+${wating_verify_email_title}        บัญชีของคุณยังไม่ได้ยืนยันตัวตน
+${wating_verify_email_subtitle}     กรุณาเช็คกล่องข้อความในอีเมล์เพื่อยืนยันตัวตน
 
 #verify_alert_message
 ${verify_username_fail}    Username is incorrect
