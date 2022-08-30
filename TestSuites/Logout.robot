@@ -15,6 +15,6 @@ Test Teardown      Go Back
 Suite Teardown     Close Application
 
 *** Test Cases ***
-S_TC-001 Logout
+Logout_TC-001 Logout
     log out
     verify logout 
