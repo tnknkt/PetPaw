@@ -1,16 +1,17 @@
 *** Settings ***
 Library   AppiumLibrary
+Resource  ${CURDIR}/../imports.robot
 
 *** Keywords ***
 Open Application by Devices 
-    [Arguments]    ${device_name}    ${platform_version}    ${platform_name}    ${reset}
+    [Arguments]    ${device_name}    ${platform_version}    ${platform_name}    ${noreset}
     Open Application    remote_url=http://localhost:4723/wd/hub     
     ...     deviceName=${device_name}
     ...     platformVersion=${platform_version}
-    ...     platformName=Android
+    ...     platformName=${platform_name}
     ...     appPackage=com.petpaw.mobile.alpha
     ...     appActivity=com.petpaw.mobile.MainActivity
-    ...     noReset=${reset}
+    ...     noReset=${noreset}
 
 Open Application by Simu
     Open Application    remote_url=http://localhost:4723/wd/hub     

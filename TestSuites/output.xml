@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220830 09:40:18.308" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220912 17:44:30.091" rpa="false" schemaversion="3">
 <suite id="s1" name="Login &amp; Logout">
 <suite id="s1-s1" name="Login" source="C:\Users\tanak\OneDrive\Desktop\Automation Testing\PetPaw\TestSuites\Login.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
@@ -9,6 +9,9 @@
 <arg>Android</arg>
 <arg>false</arg>
 <arg>AND</arg>
+<arg>Sleep</arg>
+<arg>30s</arg>
+<arg>AND</arg>
 <arg>Check popup and accept while using</arg>
 <arg>${verify_popup_camera}</arg>
 <arg>${verify_popup_image}</arg>
@@ -22,19 +25,25 @@
 <arg>remote_url=http://localhost:4723/wd/hub</arg>
 <arg>deviceName=${device_name}</arg>
 <arg>platformVersion=${platform_version}</arg>
-<arg>platformName=Android</arg>
+<arg>platformName=${platform_name}</arg>
 <arg>appPackage=com.petpaw.mobile.alpha</arg>
 <arg>appActivity=com.petpaw.mobile.MainActivity</arg>
-<arg>noReset=${reset}</arg>
+<arg>noReset=${noreset}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220830 09:40:18.572" endtime="20220830 09:40:32.131"/>
+<status status="PASS" starttime="20220912 17:44:30.392" endtime="20220912 17:44:42.641"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:18.571" endtime="20220830 09:40:32.131"/>
+<status status="PASS" starttime="20220912 17:44:30.392" endtime="20220912 17:44:42.641"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220912 17:45:12.642" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20220912 17:44:42.641" endtime="20220912 17:45:12.642"/>
 </kw>
 <kw name="Check popup and accept while using" library="StartApp_kw">
 <arg>${verify_popup_camera}</arg>
@@ -49,10 +58,10 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>id=com.android.permissioncontroller:id/grant_dialog</arg>
 <arg>15s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:32.132" endtime="20220830 09:40:40.293"/>
+<status status="PASS" starttime="20220912 17:45:12.643" endtime="20220912 17:45:12.740"/>
 </kw>
-<msg timestamp="20220830 09:40:40.293" level="INFO">${passed} = True</msg>
-<status status="PASS" starttime="20220830 09:40:32.132" endtime="20220830 09:40:40.293"/>
+<msg timestamp="20220912 17:45:12.741" level="INFO">${passed} = True</msg>
+<status status="PASS" starttime="20220912 17:45:12.643" endtime="20220912 17:45:12.741"/>
 </kw>
 <if>
 <branch type="IF" condition="${passed}">
@@ -60,49 +69,49 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>id=com.android.permissioncontroller:id/permission_message</arg>
 <arg>10s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:40.294" endtime="20220830 09:40:40.390"/>
+<status status="PASS" starttime="20220912 17:45:12.741" endtime="20220912 17:45:12.816"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_message</arg>
 <arg>${verify_permission_camera}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:40:40.393" level="INFO">Verifying element 'id=com.android.permissioncontroller:id/permission_message' contains exactly text 'Allow PetPaw (Alpha) to take pictures and record video?'.</msg>
-<status status="PASS" starttime="20220830 09:40:40.390" endtime="20220830 09:40:40.440"/>
+<msg timestamp="20220912 17:45:12.818" level="INFO">Verifying element 'id=com.android.permissioncontroller:id/permission_message' contains exactly text 'Allow PetPaw (Alpha) to take pictures and record video?'.</msg>
+<status status="PASS" starttime="20220912 17:45:12.816" endtime="20220912 17:45:12.888"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_allow_foreground_only_button</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:40:40.441" endtime="20220830 09:40:40.703"/>
+<status status="PASS" starttime="20220912 17:45:12.888" endtime="20220912 17:45:13.216"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_message</arg>
 <arg>10s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:40.703" endtime="20220830 09:40:41.562"/>
+<status status="PASS" starttime="20220912 17:45:13.216" endtime="20220912 17:45:14.100"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_message</arg>
 <arg>${verify_permission_image}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:40:41.566" level="INFO">Verifying element 'id=com.android.permissioncontroller:id/permission_message' contains exactly text 'Allow PetPaw (Alpha) to access photos and media on your device?'.</msg>
-<status status="PASS" starttime="20220830 09:40:41.563" endtime="20220830 09:40:41.644"/>
+<msg timestamp="20220912 17:45:14.102" level="INFO">Verifying element 'id=com.android.permissioncontroller:id/permission_message' contains exactly text 'Allow PetPaw (Alpha) to access photos and media on your device?'.</msg>
+<status status="PASS" starttime="20220912 17:45:14.100" endtime="20220912 17:45:14.212"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_allow_button</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:40:41.645" endtime="20220830 09:40:41.943"/>
+<status status="PASS" starttime="20220912 17:45:14.212" endtime="20220912 17:45:14.534"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:40.294" endtime="20220830 09:40:41.943"/>
+<status status="PASS" starttime="20220912 17:45:12.741" endtime="20220912 17:45:14.534"/>
 </branch>
-<status status="PASS" starttime="20220830 09:40:40.294" endtime="20220830 09:40:41.943"/>
+<status status="PASS" starttime="20220912 17:45:12.741" endtime="20220912 17:45:14.534"/>
 </if>
-<status status="PASS" starttime="20220830 09:40:32.131" endtime="20220830 09:40:41.943"/>
+<status status="PASS" starttime="20220912 17:45:12.642" endtime="20220912 17:45:14.534"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:18.571" endtime="20220830 09:40:41.943"/>
+<status status="PASS" starttime="20220912 17:44:30.391" endtime="20220912 17:45:14.534"/>
 </kw>
 <test id="s1-s1-t1" name="Login_TC-001 empty Login-Tap broadcast" line="21">
 <kw name="Run Keyword" library="BuiltIn" type="SETUP">
-<arg>Tap Element Show login</arg>
+<arg>Login_kw.Tap Element Show login</arg>
 <arg>${broadcast_btn}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
 <kw name="Tap Element Show login" library="Login_kw">
@@ -111,104 +120,104 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${show_login}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:41.946" endtime="20220830 09:40:42.888"/>
+<status status="PASS" starttime="20220912 17:45:14.537" endtime="20220912 17:45:15.594"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
 <arg>${show_login}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:40:42.888" endtime="20220830 09:40:43.403"/>
+<status status="PASS" starttime="20220912 17:45:15.594" endtime="20220912 17:45:16.324"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:41.945" endtime="20220830 09:40:43.404"/>
+<status status="PASS" starttime="20220912 17:45:14.536" endtime="20220912 17:45:16.324"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:41.945" endtime="20220830 09:40:43.404"/>
+<status status="PASS" starttime="20220912 17:45:14.536" endtime="20220912 17:45:16.324"/>
 </kw>
 <kw name="login" library="Login_kw">
 <arg>${EMPTY}</arg>
 <arg>${EMPTY}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:43.407" endtime="20220830 09:40:44.729"/>
+<status status="PASS" starttime="20220912 17:45:16.327" endtime="20220912 17:45:17.686"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:44.729" endtime="20220830 09:40:45.074"/>
+<status status="PASS" starttime="20220912 17:45:17.686" endtime="20220912 17:45:18.002"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:45.074" endtime="20220830 09:40:45.385"/>
+<status status="PASS" starttime="20220912 17:45:18.002" endtime="20220912 17:45:18.237"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>${username}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:40:45.388" level="INFO">Typing text '' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:40:45.385" endtime="20220830 09:40:46.526"/>
+<msg timestamp="20220912 17:45:18.241" level="INFO">Typing text '' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:45:18.237" endtime="20220912 17:45:18.564"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:46.526" endtime="20220830 09:40:47.330"/>
+<status status="PASS" starttime="20220912 17:45:18.564" endtime="20220912 17:45:19.540"/>
 </kw>
 <kw name="Input Password" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:40:47.333" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:40:47.330" endtime="20220830 09:40:47.777"/>
+<msg timestamp="20220912 17:45:19.543" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:45:19.540" endtime="20220912 17:45:19.950"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:40:47.777" endtime="20220830 09:40:48.836"/>
+<status status="PASS" starttime="20220912 17:45:19.950" endtime="20220912 17:45:21.149"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:43.405" endtime="20220830 09:40:48.836"/>
+<status status="PASS" starttime="20220912 17:45:16.325" endtime="20220912 17:45:21.149"/>
 </kw>
 <kw name="verify login fail" library="Login_kw">
 <arg>${verify_username_empty}</arg>
 <arg>${verify_passwd_empty}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]</arg>
+<arg>${username_alertmessage_text}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:48.838" endtime="20220830 09:40:50.170"/>
+<status status="PASS" starttime="20220912 17:45:21.151" endtime="20220912 17:45:22.475"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]</arg>
+<arg>${username_alertmessage_text}</arg>
 <arg>${username_fail}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:40:50.173" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]' contains exactly text 'This field is require'.</msg>
-<status status="PASS" starttime="20220830 09:40:50.170" endtime="20220830 09:40:50.494"/>
+<msg timestamp="20220912 17:45:22.478" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]' contains exactly text 'This field is require'.</msg>
+<status status="PASS" starttime="20220912 17:45:22.475" endtime="20220912 17:45:22.782"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]</arg>
+<arg>${password_alertmessage_text}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:50.494" endtime="20220830 09:40:50.795"/>
+<status status="PASS" starttime="20220912 17:45:22.782" endtime="20220912 17:45:23.102"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]</arg>
+<arg>${password_alertmessage_text}</arg>
 <arg>${passwd_fail}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:40:50.798" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]' contains exactly text 'Password is required'.</msg>
-<status status="PASS" starttime="20220830 09:40:50.795" endtime="20220830 09:40:51.119"/>
+<msg timestamp="20220912 17:45:23.106" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]' contains exactly text 'Password is required'.</msg>
+<status status="PASS" starttime="20220912 17:45:23.102" endtime="20220912 17:45:23.375"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:48.837" endtime="20220830 09:40:51.119"/>
+<status status="PASS" starttime="20220912 17:45:21.150" endtime="20220912 17:45:23.375"/>
 </kw>
 <kw name="Go Back" library="AppiumLibrary" type="TEARDOWN">
 <doc>Goes one step backward in the browser history.</doc>
-<status status="PASS" starttime="20220830 09:40:51.120" endtime="20220830 09:40:51.410"/>
+<status status="PASS" starttime="20220912 17:45:23.376" endtime="20220912 17:45:23.507"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:41.944" endtime="20220830 09:40:51.411"/>
+<status status="PASS" starttime="20220912 17:45:14.535" endtime="20220912 17:45:23.508"/>
 </test>
-<test id="s1-s1-t2" name="Login_TC_TC-002 invalid Login-Tap broadcast" line="25">
+<test id="s1-s1-t2" name="Login_TC-002 invalid Login-Tap broadcast" line="25">
 <kw name="Run Keyword" library="BuiltIn" type="SETUP">
-<arg>Tap Element Show login</arg>
+<arg>Login_kw.Tap Element Show login</arg>
 <arg>${broadcast_btn}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
 <kw name="Tap Element Show login" library="Login_kw">
@@ -217,104 +226,104 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${show_login}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:51.415" endtime="20220830 09:40:52.685"/>
+<status status="PASS" starttime="20220912 17:45:23.511" endtime="20220912 17:45:25.185"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
 <arg>${show_login}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:40:52.685" endtime="20220830 09:40:53.539"/>
+<status status="PASS" starttime="20220912 17:45:25.185" endtime="20220912 17:45:26.072"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:51.414" endtime="20220830 09:40:53.539"/>
+<status status="PASS" starttime="20220912 17:45:23.510" endtime="20220912 17:45:26.072"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:51.414" endtime="20220830 09:40:53.539"/>
+<status status="PASS" starttime="20220912 17:45:23.510" endtime="20220912 17:45:26.072"/>
 </kw>
 <kw name="login" library="Login_kw">
 <arg>${username_invalid}</arg>
 <arg>${passwd_invalid}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:53.540" endtime="20220830 09:40:55.088"/>
+<status status="PASS" starttime="20220912 17:45:26.074" endtime="20220912 17:45:27.126"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:55.088" endtime="20220830 09:40:55.419"/>
+<status status="PASS" starttime="20220912 17:45:27.126" endtime="20220912 17:45:27.345"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:55.419" endtime="20220830 09:40:55.766"/>
+<status status="PASS" starttime="20220912 17:45:27.345" endtime="20220912 17:45:27.606"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>${username}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:40:55.769" level="INFO">Typing text 'test123' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:40:55.766" endtime="20220830 09:40:56.629"/>
+<msg timestamp="20220912 17:45:27.609" level="INFO">Typing text 'test123' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:45:27.606" endtime="20220912 17:45:28.440"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:56.629" endtime="20220830 09:40:58.138"/>
+<status status="PASS" starttime="20220912 17:45:28.441" endtime="20220912 17:45:29.540"/>
 </kw>
 <kw name="Input Password" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:40:58.140" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:40:58.138" endtime="20220830 09:40:58.484"/>
+<msg timestamp="20220912 17:45:29.542" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:45:29.540" endtime="20220912 17:45:29.872"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:40:58.484" endtime="20220830 09:40:59.789"/>
+<status status="PASS" starttime="20220912 17:45:29.872" endtime="20220912 17:45:31.003"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:53.540" endtime="20220830 09:40:59.789"/>
+<status status="PASS" starttime="20220912 17:45:26.073" endtime="20220912 17:45:31.004"/>
 </kw>
 <kw name="verify login fail" library="Login_kw">
 <arg>${verify_username_fail}</arg>
 <arg>${verify_passwd_fail}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]</arg>
+<arg>${username_alertmessage_text}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:40:59.791" endtime="20220830 09:41:01.174"/>
+<status status="PASS" starttime="20220912 17:45:31.005" endtime="20220912 17:45:32.408"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]</arg>
+<arg>${username_alertmessage_text}</arg>
 <arg>${username_fail}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:41:01.176" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]' contains exactly text 'Username is incorrect'.</msg>
-<status status="PASS" starttime="20220830 09:41:01.174" endtime="20220830 09:41:01.964"/>
+<msg timestamp="20220912 17:45:32.410" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]' contains exactly text 'Username is incorrect'.</msg>
+<status status="PASS" starttime="20220912 17:45:32.408" endtime="20220912 17:45:32.679"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]</arg>
+<arg>${password_alertmessage_text}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:01.964" endtime="20220830 09:41:02.293"/>
+<status status="PASS" starttime="20220912 17:45:32.679" endtime="20220912 17:45:32.978"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]</arg>
+<arg>${password_alertmessage_text}</arg>
 <arg>${passwd_fail}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:41:02.295" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]' contains exactly text 'Password is incorrect'.</msg>
-<status status="PASS" starttime="20220830 09:41:02.293" endtime="20220830 09:41:02.564"/>
+<msg timestamp="20220912 17:45:32.983" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]' contains exactly text 'Password is incorrect'.</msg>
+<status status="PASS" starttime="20220912 17:45:32.978" endtime="20220912 17:45:33.229"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:59.790" endtime="20220830 09:41:02.565"/>
+<status status="PASS" starttime="20220912 17:45:31.004" endtime="20220912 17:45:33.229"/>
 </kw>
 <kw name="Go Back" library="AppiumLibrary" type="TEARDOWN">
 <doc>Goes one step backward in the browser history.</doc>
-<status status="PASS" starttime="20220830 09:41:02.565" endtime="20220830 09:41:02.698"/>
+<status status="PASS" starttime="20220912 17:45:33.230" endtime="20220912 17:45:33.338"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:51.413" endtime="20220830 09:41:02.699"/>
+<status status="PASS" starttime="20220912 17:45:23.509" endtime="20220912 17:45:33.339"/>
 </test>
-<test id="s1-s1-t3" name="Login_TC_TC-003 not verify email Login-Tap broadcast" line="29">
+<test id="s1-s1-t3" name="Login_TC-003 not verify email Login-Tap broadcast" line="29">
 <kw name="Run Keyword" library="BuiltIn" type="SETUP">
-<arg>Tap Element Show login</arg>
+<arg>Login_kw.Tap Element Show login</arg>
 <arg>${broadcast_btn}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
 <kw name="Tap Element Show login" library="Login_kw">
@@ -323,120 +332,120 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${show_login}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:02.702" endtime="20220830 09:41:05.066"/>
+<status status="PASS" starttime="20220912 17:45:33.342" endtime="20220912 17:45:34.707"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
 <arg>${show_login}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:05.066" endtime="20220830 09:41:05.906"/>
+<status status="PASS" starttime="20220912 17:45:34.707" endtime="20220912 17:45:35.587"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:02.701" endtime="20220830 09:41:05.907"/>
+<status status="PASS" starttime="20220912 17:45:33.342" endtime="20220912 17:45:35.588"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:02.701" endtime="20220830 09:41:05.907"/>
+<status status="PASS" starttime="20220912 17:45:33.341" endtime="20220912 17:45:35.588"/>
 </kw>
 <kw name="login" library="Login_kw">
 <arg>${username_not_verify}</arg>
 <arg>${passwd_not_verify}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:05.907" endtime="20220830 09:41:07.015"/>
+<status status="PASS" starttime="20220912 17:45:35.589" endtime="20220912 17:45:36.651"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:07.015" endtime="20220830 09:41:07.312"/>
+<status status="PASS" starttime="20220912 17:45:36.652" endtime="20220912 17:45:36.879"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:07.313" endtime="20220830 09:41:07.592"/>
+<status status="PASS" starttime="20220912 17:45:36.879" endtime="20220912 17:45:37.146"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>${username}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:41:07.595" level="INFO">Typing text 'tanakornp@petpaw.com' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:41:07.592" endtime="20220830 09:41:08.382"/>
+<msg timestamp="20220912 17:45:37.149" level="INFO">Typing text 'tanakornp@petpaw.com' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:45:37.146" endtime="20220912 17:45:37.452"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:08.382" endtime="20220830 09:41:09.423"/>
+<status status="PASS" starttime="20220912 17:45:37.453" endtime="20220912 17:45:38.504"/>
 </kw>
 <kw name="Input Password" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:41:09.426" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:41:09.423" endtime="20220830 09:41:10.216"/>
+<msg timestamp="20220912 17:45:38.507" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:45:38.505" endtime="20220912 17:45:39.325"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:10.216" endtime="20220830 09:41:11.465"/>
+<status status="PASS" starttime="20220912 17:45:39.325" endtime="20220912 17:45:40.561"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:05.907" endtime="20220830 09:41:11.465"/>
+<status status="PASS" starttime="20220912 17:45:35.588" endtime="20220912 17:45:40.561"/>
 </kw>
 <kw name="verify login with not verify email" library="Login_kw">
 <arg>${wating_verify_email_title}</arg>
 <arg>${wating_verify_email_subtitle}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[1]</arg>
+<arg>${title_notverifypopup_text}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:11.467" endtime="20220830 09:41:13.320"/>
+<status status="PASS" starttime="20220912 17:45:40.563" endtime="20220912 17:45:42.334"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[1]</arg>
+<arg>${title_notverifypopup_text}</arg>
 <arg>${title}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:41:13.330" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[1]' contains exactly text 'Your account waiting to verify'.</msg>
-<status status="PASS" starttime="20220830 09:41:13.320" endtime="20220830 09:41:13.555"/>
+<msg timestamp="20220912 17:45:42.337" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[1]' contains exactly text 'Your account waiting to verify'.</msg>
+<status status="PASS" starttime="20220912 17:45:42.334" endtime="20220912 17:45:42.459"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[2]</arg>
+<arg>${subtitle_notverifypopup_text}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:13.556" endtime="20220830 09:41:13.777"/>
+<status status="PASS" starttime="20220912 17:45:42.459" endtime="20220912 17:45:42.596"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[2]</arg>
+<arg>${subtitle_notverifypopup_text}</arg>
 <arg>${subtitle}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:41:13.780" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[2]' contains exactly text 'Please go to your email and verify your account.'.</msg>
-<status status="PASS" starttime="20220830 09:41:13.777" endtime="20220830 09:41:13.925"/>
+<msg timestamp="20220912 17:45:42.598" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[2]' contains exactly text 'Please go to your email and verify your account.'.</msg>
+<status status="PASS" starttime="20220912 17:45:42.596" endtime="20220912 17:45:42.709"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[4]</arg>
+<arg>${got_it_noverifypopup_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:13.926" endtime="20220830 09:41:14.769"/>
+<status status="PASS" starttime="20220912 17:45:42.710" endtime="20220912 17:45:43.031"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:14.769" endtime="20220830 09:41:16.168"/>
+<status status="PASS" starttime="20220912 17:45:43.032" endtime="20220912 17:45:44.438"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:16.168" endtime="20220830 09:41:16.427"/>
+<status status="PASS" starttime="20220912 17:45:44.438" endtime="20220912 17:45:44.704"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:11.466" endtime="20220830 09:41:16.427"/>
+<status status="PASS" starttime="20220912 17:45:40.562" endtime="20220912 17:45:44.704"/>
 </kw>
 <kw name="Go Back" library="AppiumLibrary" type="TEARDOWN">
 <doc>Goes one step backward in the browser history.</doc>
-<status status="PASS" starttime="20220830 09:41:16.428" endtime="20220830 09:41:16.519"/>
+<status status="PASS" starttime="20220912 17:45:44.705" endtime="20220912 17:45:44.827"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:02.700" endtime="20220830 09:41:16.519"/>
+<status status="PASS" starttime="20220912 17:45:33.341" endtime="20220912 17:45:44.827"/>
 </test>
-<test id="s1-s1-t4" name="Login_TC_TC-004 valid Login-Tap broadcast" line="33">
+<test id="s1-s1-t4" name="Login_TC-004 valid Login-Tap broadcast" line="33">
 <kw name="Run Keyword" library="BuiltIn" type="SETUP">
-<arg>Tap Element Show login</arg>
+<arg>Login_kw.Tap Element Show login</arg>
 <arg>${broadcast_btn}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
 <kw name="Tap Element Show login" library="Login_kw">
@@ -445,103 +454,103 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${show_login}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:16.522" endtime="20220830 09:41:17.754"/>
+<status status="PASS" starttime="20220912 17:45:44.830" endtime="20220912 17:45:46.433"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
 <arg>${show_login}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:17.754" endtime="20220830 09:41:19.517"/>
+<status status="PASS" starttime="20220912 17:45:46.433" endtime="20220912 17:45:47.159"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:16.522" endtime="20220830 09:41:19.517"/>
+<status status="PASS" starttime="20220912 17:45:44.830" endtime="20220912 17:45:47.160"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:16.522" endtime="20220830 09:41:19.517"/>
+<status status="PASS" starttime="20220912 17:45:44.829" endtime="20220912 17:45:47.160"/>
 </kw>
 <kw name="login" library="Login_kw">
 <arg>${username_valid}</arg>
 <arg>${passwd_valid}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:19.519" endtime="20220830 09:41:20.602"/>
+<status status="PASS" starttime="20220912 17:45:47.161" endtime="20220912 17:45:48.111"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:20.603" endtime="20220830 09:41:20.860"/>
+<status status="PASS" starttime="20220912 17:45:48.111" endtime="20220912 17:45:48.311"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:20.861" endtime="20220830 09:41:21.113"/>
+<status status="PASS" starttime="20220912 17:45:48.311" endtime="20220912 17:45:48.531"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>${username}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:41:21.118" level="INFO">Typing text '0830501407' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:41:21.113" endtime="20220830 09:41:21.941"/>
+<msg timestamp="20220912 17:45:48.534" level="INFO">Typing text '0830501407' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:45:48.531" endtime="20220912 17:45:49.215"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:21.941" endtime="20220830 09:41:22.936"/>
+<status status="PASS" starttime="20220912 17:45:49.215" endtime="20220912 17:45:50.396"/>
 </kw>
 <kw name="Input Password" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:41:22.938" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:41:22.936" endtime="20220830 09:41:23.299"/>
+<msg timestamp="20220912 17:45:50.399" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:45:50.396" endtime="20220912 17:45:50.673"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:23.299" endtime="20220830 09:41:24.987"/>
+<status status="PASS" starttime="20220912 17:45:50.673" endtime="20220912 17:45:51.719"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:19.518" endtime="20220830 09:41:24.987"/>
+<status status="PASS" starttime="20220912 17:45:47.160" endtime="20220912 17:45:51.719"/>
 </kw>
 <kw name="verify login pass" library="Login_kw">
 <arg>${displayname_valid}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ImageView</arg>
+<arg>${me_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:24.988" endtime="20220830 09:41:28.219"/>
+<status status="PASS" starttime="20220912 17:45:51.721" endtime="20220912 17:45:53.987"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ImageView</arg>
+<arg>${me_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:28.219" endtime="20220830 09:41:29.190"/>
+<status status="PASS" starttime="20220912 17:45:53.987" endtime="20220912 17:45:55.129"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[1]</arg>
+<arg>${displayname_text}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:29.190" endtime="20220830 09:41:30.325"/>
+<status status="PASS" starttime="20220912 17:45:55.129" endtime="20220912 17:45:56.322"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[1]</arg>
+<arg>${displayname_text}</arg>
 <arg>${displayname}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:41:30.327" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[1]' contains exactly text 'FIATT'.</msg>
-<status status="PASS" starttime="20220830 09:41:30.325" endtime="20220830 09:41:30.671"/>
+<msg timestamp="20220912 17:45:56.327" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[1]' contains exactly text 'FIATT'.</msg>
+<status status="PASS" starttime="20220912 17:45:56.322" endtime="20220912 17:45:56.724"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:24.987" endtime="20220830 09:41:30.671"/>
+<status status="PASS" starttime="20220912 17:45:51.720" endtime="20220912 17:45:56.725"/>
 </kw>
 <kw name="Go Back" library="AppiumLibrary" type="TEARDOWN">
 <doc>Goes one step backward in the browser history.</doc>
-<status status="PASS" starttime="20220830 09:41:30.672" endtime="20220830 09:41:30.787"/>
+<status status="PASS" starttime="20220912 17:45:56.725" endtime="20220912 17:45:56.959"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:16.521" endtime="20220830 09:41:30.788"/>
+<status status="PASS" starttime="20220912 17:45:44.829" endtime="20220912 17:45:56.959"/>
 </test>
 <kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" starttime="20220830 09:41:30.790" endtime="20220830 09:41:31.520"/>
+<status status="PASS" starttime="20220912 17:45:56.961" endtime="20220912 17:45:57.592"/>
 </kw>
-<status status="PASS" starttime="20220830 09:40:18.341" endtime="20220830 09:41:31.520"/>
+<status status="PASS" starttime="20220912 17:44:30.116" endtime="20220912 17:45:57.592"/>
 </suite>
 <suite id="s1-s2" name="Logout" source="C:\Users\tanak\OneDrive\Desktop\Automation Testing\PetPaw\TestSuites\Logout.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
@@ -551,6 +560,9 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>Android</arg>
 <arg>false</arg>
 <arg>AND</arg>
+<arg>Sleep</arg>
+<arg>30s</arg>
+<arg>AND</arg>
 <arg>Check popup and accept while using</arg>
 <arg>${verify_popup_camera}</arg>
 <arg>${verify_popup_image}</arg>
@@ -564,19 +576,25 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>remote_url=http://localhost:4723/wd/hub</arg>
 <arg>deviceName=${device_name}</arg>
 <arg>platformVersion=${platform_version}</arg>
-<arg>platformName=Android</arg>
+<arg>platformName=${platform_name}</arg>
 <arg>appPackage=com.petpaw.mobile.alpha</arg>
 <arg>appActivity=com.petpaw.mobile.MainActivity</arg>
-<arg>noReset=${reset}</arg>
+<arg>noReset=${noreset}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220830 09:41:31.542" endtime="20220830 09:41:44.925"/>
+<status status="PASS" starttime="20220912 17:45:57.626" endtime="20220912 17:46:10.151"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:31.541" endtime="20220830 09:41:44.925"/>
+<status status="PASS" starttime="20220912 17:45:57.623" endtime="20220912 17:46:10.151"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220912 17:46:40.160" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20220912 17:46:10.151" endtime="20220912 17:46:40.160"/>
 </kw>
 <kw name="Check popup and accept while using" library="StartApp_kw">
 <arg>${verify_popup_camera}</arg>
@@ -591,10 +609,10 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>id=com.android.permissioncontroller:id/grant_dialog</arg>
 <arg>15s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:44.927" endtime="20220830 09:41:53.052"/>
+<status status="PASS" starttime="20220912 17:46:40.160" endtime="20220912 17:46:40.239"/>
 </kw>
-<msg timestamp="20220830 09:41:53.052" level="INFO">${passed} = True</msg>
-<status status="PASS" starttime="20220830 09:41:44.926" endtime="20220830 09:41:53.052"/>
+<msg timestamp="20220912 17:46:40.239" level="INFO">${passed} = True</msg>
+<status status="PASS" starttime="20220912 17:46:40.160" endtime="20220912 17:46:40.239"/>
 </kw>
 <if>
 <branch type="IF" condition="${passed}">
@@ -602,206 +620,252 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>id=com.android.permissioncontroller:id/permission_message</arg>
 <arg>10s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:53.053" endtime="20220830 09:41:53.095"/>
+<status status="PASS" starttime="20220912 17:46:40.239" endtime="20220912 17:46:40.304"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_message</arg>
 <arg>${verify_permission_camera}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:41:53.098" level="INFO">Verifying element 'id=com.android.permissioncontroller:id/permission_message' contains exactly text 'Allow PetPaw (Alpha) to take pictures and record video?'.</msg>
-<status status="PASS" starttime="20220830 09:41:53.095" endtime="20220830 09:41:53.145"/>
+<msg timestamp="20220912 17:46:40.308" level="INFO">Verifying element 'id=com.android.permissioncontroller:id/permission_message' contains exactly text 'Allow PetPaw (Alpha) to take pictures and record video?'.</msg>
+<status status="PASS" starttime="20220912 17:46:40.305" endtime="20220912 17:46:40.368"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_allow_foreground_only_button</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:53.145" endtime="20220830 09:41:53.357"/>
+<status status="PASS" starttime="20220912 17:46:40.368" endtime="20220912 17:46:40.628"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_message</arg>
 <arg>10s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:53.358" endtime="20220830 09:41:54.723"/>
+<status status="PASS" starttime="20220912 17:46:40.628" endtime="20220912 17:46:41.484"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_message</arg>
 <arg>${verify_permission_image}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:41:54.726" level="INFO">Verifying element 'id=com.android.permissioncontroller:id/permission_message' contains exactly text 'Allow PetPaw (Alpha) to access photos and media on your device?'.</msg>
-<status status="PASS" starttime="20220830 09:41:54.723" endtime="20220830 09:41:54.809"/>
+<msg timestamp="20220912 17:46:41.486" level="INFO">Verifying element 'id=com.android.permissioncontroller:id/permission_message' contains exactly text 'Allow PetPaw (Alpha) to access photos and media on your device?'.</msg>
+<status status="PASS" starttime="20220912 17:46:41.484" endtime="20220912 17:46:41.558"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
 <arg>id=com.android.permissioncontroller:id/permission_allow_button</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:54.809" endtime="20220830 09:41:55.123"/>
+<status status="PASS" starttime="20220912 17:46:41.558" endtime="20220912 17:46:41.824"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:53.052" endtime="20220830 09:41:55.123"/>
+<status status="PASS" starttime="20220912 17:46:40.239" endtime="20220912 17:46:41.824"/>
 </branch>
-<status status="PASS" starttime="20220830 09:41:53.052" endtime="20220830 09:41:55.123"/>
+<status status="PASS" starttime="20220912 17:46:40.239" endtime="20220912 17:46:41.824"/>
 </if>
-<status status="PASS" starttime="20220830 09:41:44.926" endtime="20220830 09:41:55.123"/>
+<status status="PASS" starttime="20220912 17:46:40.160" endtime="20220912 17:46:41.824"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:31.541" endtime="20220830 09:41:55.123"/>
+<status status="PASS" starttime="20220912 17:45:57.622" endtime="20220912 17:46:41.824"/>
 </kw>
-<test id="s1-s2-t1" name="S_TC-001 Logout" line="18">
+<test id="s1-s2-t1" name="Logout_TC-001 Logout" line="21">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
-<arg>Tap Element Show login</arg>
-<arg>${broadcast_btn}</arg>
+<arg>Logout_kw.Check Already login are not</arg>
+<arg>log out</arg>
+<arg>${verify_logout_text}</arg>
 <arg>AND</arg>
 <arg>login</arg>
 <arg>${username_valid}</arg>
 <arg>${passwd_valid}</arg>
 <doc>Executes all the given keywords in a sequence.</doc>
-<kw name="Tap Element Show login" library="Login_kw">
-<arg>${broadcast_btn}</arg>
+<kw name="Check Already login are not" library="Logout_kw">
+<arg>log out</arg>
+<arg>${verify_logout_text}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>${show_login}</arg>
+<arg>${me_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:55.126" endtime="20220830 09:41:55.980"/>
+<status status="PASS" starttime="20220912 17:46:41.827" endtime="20220912 17:46:42.827"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>${show_login}</arg>
+<arg>${me_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:41:55.980" endtime="20220830 09:41:56.451"/>
+<status status="PASS" starttime="20220912 17:46:42.827" endtime="20220912 17:46:43.427"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:55.125" endtime="20220830 09:41:56.452"/>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${passed}</var>
+<arg>Wait Until Element is visible</arg>
+<arg>${displayname_text}</arg>
+<arg>30s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${displayname_text}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220912 17:47:14.662" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220912 17:47:13.760" endtime="20220912 17:47:14.662"/>
+</kw>
+<msg timestamp="20220912 17:47:14.663" level="FAIL">Element locator 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[1]' did not match any elements after 30 seconds</msg>
+<status status="FAIL" starttime="20220912 17:46:43.428" endtime="20220912 17:47:14.664"/>
+</kw>
+<msg timestamp="20220912 17:47:14.664" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220912 17:46:43.427" endtime="20220912 17:47:14.664"/>
+</kw>
+<if>
+<branch type="IF" condition="${passed}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${do_something}</arg>
+<arg>${text}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="NOT RUN" starttime="20220912 17:47:14.665" endtime="20220912 17:47:14.665"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${broadcast_btn}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="NOT RUN" starttime="20220912 17:47:14.665" endtime="20220912 17:47:14.665"/>
+</kw>
+<kw name="Tap Element Show login" library="Login_kw">
+<arg>${broadcast_btn}</arg>
+<status status="NOT RUN" starttime="20220912 17:47:14.665" endtime="20220912 17:47:14.665"/>
+</kw>
+<status status="NOT RUN" starttime="20220912 17:47:14.664" endtime="20220912 17:47:14.665"/>
+</branch>
+<status status="PASS" starttime="20220912 17:47:14.664" endtime="20220912 17:47:14.665"/>
+</if>
+<status status="PASS" starttime="20220912 17:46:41.826" endtime="20220912 17:47:14.666"/>
 </kw>
 <kw name="login" library="Login_kw">
 <arg>${username_valid}</arg>
 <arg>${passwd_valid}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:56.453" endtime="20220830 09:41:57.544"/>
+<status status="PASS" starttime="20220912 17:47:14.667" endtime="20220912 17:47:14.956"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:57.544" endtime="20220830 09:41:57.913"/>
+<status status="PASS" starttime="20220912 17:47:14.956" endtime="20220912 17:47:15.248"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:57.913" endtime="20220830 09:41:58.276"/>
+<status status="PASS" starttime="20220912 17:47:15.248" endtime="20220912 17:47:15.509"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${username_input_field}</arg>
 <arg>${username}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:41:58.279" level="INFO">Typing text '0830501407' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:41:58.276" endtime="20220830 09:41:58.715"/>
+<msg timestamp="20220912 17:47:15.511" level="INFO">Typing text '0830501407' into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:47:15.509" endtime="20220912 17:47:15.781"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:41:58.716" endtime="20220830 09:41:59.774"/>
+<status status="PASS" starttime="20220912 17:47:15.782" endtime="20220912 17:47:16.805"/>
 </kw>
 <kw name="Input Password" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText</arg>
+<arg>${password_input_field}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<msg timestamp="20220830 09:41:59.781" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
-<status status="PASS" starttime="20220830 09:41:59.775" endtime="20220830 09:42:00.214"/>
+<msg timestamp="20220912 17:47:16.808" level="INFO">Typing password into text field 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20220912 17:47:16.805" endtime="20220912 17:47:17.589"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:42:00.214" endtime="20220830 09:42:02.247"/>
+<status status="PASS" starttime="20220912 17:47:17.589" endtime="20220912 17:47:18.811"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:56.452" endtime="20220830 09:42:02.247"/>
+<status status="PASS" starttime="20220912 17:47:14.666" endtime="20220912 17:47:18.811"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:55.125" endtime="20220830 09:42:02.247"/>
+<status status="PASS" starttime="20220912 17:46:41.825" endtime="20220912 17:47:18.811"/>
 </kw>
 <kw name="logout" library="Logout_kw">
+<arg>${verify_logout_text}</arg>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ImageView</arg>
+<arg>${me_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:42:02.248" endtime="20220830 09:42:03.649"/>
+<status status="PASS" starttime="20220912 17:47:18.812" endtime="20220912 17:47:22.093"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ImageView</arg>
+<arg>${me_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:42:03.650" endtime="20220830 09:42:05.550"/>
+<status status="PASS" starttime="20220912 17:47:22.094" endtime="20220912 17:47:23.042"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup</arg>
+<arg>${logout_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:42:05.551" endtime="20220830 09:42:06.782"/>
+<status status="PASS" starttime="20220912 17:47:23.042" endtime="20220912 17:47:24.314"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup</arg>
+<arg>${logout_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:42:06.782" endtime="20220830 09:42:07.383"/>
+<status status="PASS" starttime="20220912 17:47:24.314" endtime="20220912 17:47:24.775"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]</arg>
+<arg>${title_confirmlogoutpopup_text}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:42:07.383" endtime="20220830 09:42:08.372"/>
+<status status="PASS" starttime="20220912 17:47:24.775" endtime="20220912 17:47:25.746"/>
 </kw>
 <kw name="Element Text Should Be" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]</arg>
-<arg>Logout</arg>
+<arg>${title_confirmlogoutpopup_text}</arg>
+<arg>${verify_logout_text}</arg>
 <doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
-<msg timestamp="20220830 09:42:08.376" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]' contains exactly text 'Logout'.</msg>
-<status status="PASS" starttime="20220830 09:42:08.372" endtime="20220830 09:42:08.531"/>
+<msg timestamp="20220912 17:47:25.748" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]' contains exactly text 'Logout'.</msg>
+<status status="PASS" starttime="20220912 17:47:25.746" endtime="20220912 17:47:25.876"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]</arg>
+<arg>${confirm_logout_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:42:08.531" endtime="20220830 09:42:08.682"/>
+<status status="PASS" starttime="20220912 17:47:25.876" endtime="20220912 17:47:26.021"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]</arg>
+<arg>${confirm_logout_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:42:08.682" endtime="20220830 09:42:09.056"/>
+<status status="PASS" starttime="20220912 17:47:26.021" endtime="20220912 17:47:26.360"/>
 </kw>
-<status status="PASS" starttime="20220830 09:42:02.248" endtime="20220830 09:42:09.056"/>
+<status status="PASS" starttime="20220912 17:47:18.812" endtime="20220912 17:47:26.360"/>
 </kw>
 <kw name="verify logout" library="Logout_kw">
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ImageView</arg>
+<arg>${me_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:42:09.057" endtime="20220830 09:42:12.113"/>
+<status status="PASS" starttime="20220912 17:47:26.361" endtime="20220912 17:47:28.831"/>
 </kw>
 <kw name="Tap" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ImageView</arg>
+<arg>${me_btn}</arg>
 <doc>Tap element identified by ``locator``. </doc>
-<status status="PASS" starttime="20220830 09:42:12.113" endtime="20220830 09:42:13.142"/>
+<status status="PASS" starttime="20220912 17:47:28.832" endtime="20220912 17:47:29.604"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <arg>30s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20220830 09:42:13.143" endtime="20220830 09:42:14.236"/>
+<status status="PASS" starttime="20220912 17:47:29.604" endtime="20220912 17:47:30.634"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]</arg>
+<arg>${sign_in_btn}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20220830 09:42:14.236" endtime="20220830 09:42:14.976"/>
+<status status="PASS" starttime="20220912 17:47:30.634" endtime="20220912 17:47:30.837"/>
 </kw>
-<status status="PASS" starttime="20220830 09:42:09.057" endtime="20220830 09:42:14.976"/>
+<status status="PASS" starttime="20220912 17:47:26.361" endtime="20220912 17:47:30.837"/>
 </kw>
 <kw name="Go Back" library="AppiumLibrary" type="TEARDOWN">
 <doc>Goes one step backward in the browser history.</doc>
-<status status="PASS" starttime="20220830 09:42:14.977" endtime="20220830 09:42:15.098"/>
+<status status="PASS" starttime="20220912 17:47:30.838" endtime="20220912 17:47:30.983"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:55.124" endtime="20220830 09:42:15.099"/>
+<status status="PASS" starttime="20220912 17:46:41.825" endtime="20220912 17:47:30.984"/>
 </test>
 <kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" starttime="20220830 09:42:15.102" endtime="20220830 09:42:15.830"/>
+<status status="PASS" starttime="20220912 17:47:30.985" endtime="20220912 17:47:31.577"/>
 </kw>
-<status status="PASS" starttime="20220830 09:41:31.523" endtime="20220830 09:42:15.830"/>
+<status status="PASS" starttime="20220912 17:45:57.595" endtime="20220912 17:47:31.577"/>
 </suite>
-<status status="PASS" starttime="20220830 09:40:18.311" endtime="20220830 09:42:15.835"/>
+<status status="PASS" starttime="20220912 17:44:30.093" endtime="20220912 17:47:31.579"/>
 </suite>
 <statistics>
 <total>
