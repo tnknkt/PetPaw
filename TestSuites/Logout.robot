@@ -9,8 +9,9 @@ Suite Setup        Run Keywords
 
 
 Test Setup         Run Keywords
-...                Logout_kw.Check Already login are not    log out     ${verify_logout_text}
-# 
+
+# ...                Logout_kw.Check Already login are not    log out     ${verify_logout_text}
+...                Login_kw.Tap Element Show login                   ${broadcast_btn}
 ...    AND         login                                    ${username_valid}             ${passwd_valid}
 
 Test Teardown      Go Back
