@@ -12,7 +12,7 @@ Test Setup         Run Keyword
 
 Test Teardown      Go Back    
 
-Suite Teardown     Close Application
+# Suite Teardown     Close Application
 
 *** Test Cases ***
 #--variable LANG:("EN" or "TH")
